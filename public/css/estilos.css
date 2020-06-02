@@ -1,6 +1,10 @@
 body {
     background-color: #DCA2C0;
 }
+.navbar {
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+
 #navbar_titulo{
     font-size: 0;
     background: url(../recursos/Logo.png) no-repeat;
@@ -16,7 +20,7 @@ body {
 }
 #link_sesion {
     position: absolute;
-    left: 65%;
+    left: 90%;
 }
 .nav-item b{
     margin-left: 10px;
@@ -27,13 +31,16 @@ body {
 }
 .main-content.container {
     padding: 25px;
+    background-size: cover;
+    background-image: url(../recursos/pattern-veton2.png);
 }
 .main-content.container h2 {
     text-align: center;
-    color:black;
+    color: #4E4E4E;
     font-weight: 600;
 }
 .titulo_index {
+    color: #4E4E4E;
     font-family: "poppinsbold";
     font-size: 4em;
 }
@@ -41,6 +48,7 @@ body {
     font-family: "poppinsregular";
     font-size: 1.25em;
     margin-bottom: 60px;
+    color: #4E4E4E;
 }
 .subtitulo_index {
     font-family: "poppinsmedium";
@@ -62,7 +70,6 @@ div.index_container {
 .wrapper {
     display: flex;
     min-height: calc(100vh - 150px);
-    background-color: #DCA2C0;
 }
 
 .contenedor_botones_detalle {
@@ -70,16 +77,16 @@ div.index_container {
     margin: 20px;
 }
 table.table-bordered{
-    border:1px solid #d21b1b;
+    border:1px solid #6a1c9d;
     margin-top:20px;
 }
 table.table-bordered > thead > tr > th{
-    border:1px solid #d21b1b;
+    border:1px solid #6a1c9d;
     white-space: nowrap;
     font-family: "poppinsregular";
 }
 table.table-bordered > tbody > tr > td{
-    border:1px solid #d21b1b;
+    border:1px solid #6a1c9d;
     white-space: nowrap;
     font-family: "poppinslight";
 }
@@ -117,4 +124,13 @@ td.celda_acciones {
     justify-content: space-around;
 }
 
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1920px !important;
+    }
+}
+
+.login_wrapper {
+    margin: 0 20%;
+}
 
