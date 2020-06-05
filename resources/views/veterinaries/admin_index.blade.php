@@ -13,8 +13,8 @@
     <h1 class="titulo_index">PANEL DE ADMINISTRACIÓN</h1>
     <p class="parrafo_index">Administrador: Verificá que los datos de las veterinarias sean verdaderos y procedé a registrarlas o rechazarlas</p>
     <h2 class="subtitulo_index">Veterinarias Pendientes de Aprobación</h2>
-    <div class="table-responsive">
-        <table class="table table-striped table-bordered">
+    <div class="table-responsive-lg">
+        <table class="table table-striped table-bordered table-hover">
             <thead>
             <tr>
                 <th>ID de la Veterinaria</th>
