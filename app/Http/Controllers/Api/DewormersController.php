@@ -14,8 +14,18 @@ class DewormersController extends Controller
      */
     public function all()
     {
-        $dewormers = Dewormer::all();
-        return response()->json($dewormers);
+        try {
+            $dewormers = Dewormer::all();
+            return response()->json([
+                'success' => true,
+                'dewormers' => $dewormers
+            ]);
+        } catch (QueryException $e) {
+            return response()->json([
+                'success' => false,
+                'msg' => 'Se produjo un error al obtener los ultimos desparasitantes.',
+                'stack' => $e]);
+           }
     }
 
 }

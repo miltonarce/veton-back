@@ -14,8 +14,18 @@ class VaccinesController extends Controller
      */
     public function all()
     {
-        $vaccines = Vaccine::all();
-        return response()->json($vaccines);
+        try {
+            $vaccines = Vaccine::all();
+            return response()->json([
+                'success' => true,
+                'vaccines' => $vaccines
+            ]);
+        } catch (QueryException $e) {
+            return response()->json([
+                'success' => false,
+                'msg' => 'Se produjo un error al obtener las últimas vacunas.',
+                'stack' => $e]);
+           }
     }
 
 }
