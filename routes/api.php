@@ -94,6 +94,8 @@ Route::get('types', 'Api\\TypesController@all');
 Route::get('vaccines', 'Api\\VaccinesController@all');
 Route::get('dewormers', 'Api\\DewormersController@all');
 Route::post('pets', 'Api\\PetsController@store');
+Route::get('veterinaries/{user}'. 'Api\\VeterinariesController@findByUser');
+Route::put('veterinaries/{idVeterinary}'. 'Api\\VeterinariesController@editVet');
 });
 /*
 Route::group(['middleware' => 'api'], function() {
