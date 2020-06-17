@@ -55,5 +55,33 @@ class VeterinariesTableSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
+        DB::table('veterinaries')->insert([
+            'id_veterinary' => 4,
+            'id_user' =>1,
+            'business_name' => 'Leocan Veterinaria SA',
+            'fantasy_name' =>'Leocan Veterinaria',
+            'cuit_cuil' =>30256978,
+            'image'=>'leocan.jpg',
+            'phone1' => 1545782589,
+            'phone2'=> 45890258,
+            'street'=> 'Manuel Ugarte 2226',
+            'between_streets'=>'Vuelta de Obligado, Cuba',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('veterinaries')->insert([
+            'id_veterinary' => 5,
+            'id_user' =>1,
+            'business_name' => 'Whippet SA',
+            'fantasy_name' =>'Whippet',
+            'cuit_cuil' =>33147259,
+            'image'=>'whippet.jpg',
+            'phone1' => 153558699,
+            'phone2'=> 47881979,
+            'street'=> 'Av. Monroe 2200',
+            'between_streets'=>'Vuelta de Obligado, Cuba',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
     }
 }

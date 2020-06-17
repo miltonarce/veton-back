@@ -15,8 +15,19 @@ class VeterinariesController extends Controller
      */
     public function all()
     {
-        $veterinaries = Veterinary::all();
-        return response()->json($veterinaries);
+        try{
+            $veterinaries = Veterinary::all();
+            return response()->json([
+                'success'      => true,
+                'veterinaries' => $veterinaries
+            ]);
+        }catch(QueryException $e){
+            return response()->json([
+                'success' => false,
+                'msg'     => 'Se produjo un error al obtener la lista de veterinarias',
+                'stack'   => $e
+            ]);
+        }
     }
 
     public function index()
@@ -49,6 +60,30 @@ class VeterinariesController extends Controller
                 'stack' => $e]);
         }
     }*/
+
+    /**
+     * Retrieve all veterinaries form user by id
+     * @param int $idUser
+     * @return Response
+     */
+    public function findByUser($idUser)
+    {
+        try{
+            $veterinaries = Veterinary::where('id_user', '=', $idUser)->get();
+            return response()->json([
+                'success'    => true,
+                'veterinary' => $veterinaries
+            ]);
+        }catch(QueryException $e){
+            return response()->json([
+                'success' => false,
+                'msg'     => 'Se produjo un error al obtener la veterinaria',
+                'stack'   => $e
+            ]);
+        }
+
+    }
+
     public function store(Request $request)
     {
         try {

@@ -14,7 +14,7 @@ class Veterinary extends Model
     protected $dates = ['deleted_at'];
 
     /** @var array La lista de campos que se pueden cargar masivamente. */
-    protected $fillable = ['id_user', 'business_name', 'fantasy_name', 'cuit_cuil', 'phone1', 'phone2', 'street', 'between_streets'];
+    protected $fillable = ['id_user', 'business_name', 'fantasy_name', 'cuit_cuil', 'image', 'phone1', 'phone2', 'street', 'between_streets'];
 
     /** @var array las reglas de validación. */
     public static $rules = [
@@ -42,9 +42,14 @@ class Veterinary extends Model
         'street.required' => 'La dirección de la veterinaria no puede estar vacía.',
     ];
 
-    public function users()
+    /*public function users()
     {
         return $this->belongsToMany(User::class, 'user_veterinary', 'id_veterinary', 'id_user', 'id_veterinary', 'id_user')->withTimestamps();
+    }*/
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user', 'id_user');
     }
 
     public function appointments()
