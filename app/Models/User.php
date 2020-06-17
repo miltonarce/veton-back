@@ -51,9 +51,14 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(Pet::class, 'id_user', 'id_user');
     }
 
-    public function veterinaries()
+   /* public function veterinaries()
     {
         return $this->belongsToMany(Veterinary::class, 'user_veterinary', 'id_user', 'id_veterinary', 'id_user', 'id_veterinary')->withTimestamps();
+    }*/
+
+    public function veterinaries()
+    {
+        return $this->hasMany(Veterinary::class, 'id_user', 'id_user')->withTimestamps();
     }
 
     public function friends()
