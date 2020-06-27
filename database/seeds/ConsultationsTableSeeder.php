@@ -164,5 +164,41 @@ class ConsultationsTableSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 18,
+            'id_user' => 8,
+            'id_history' => 6,
+            'comments' => 'Consulta por vómitos.',
+            'afflictions_procedures' => 'Se receta cambio de dieta.',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 19,
+            'id_user' => 8,
+            'id_history' => 7,
+            'comments' => 'Consulta por vómitos.',
+            'afflictions_procedures' => 'Se receta Metronidazol 2,5 mm dos veces al día.',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 20,
+            'id_user' => 4,
+            'id_history' => 7,
+            'comments' => 'Consulta por vómitos.',
+            'afflictions_procedures' => 'Se receta Metronidazol 2,5 mm dos veces al día.',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 21,
+            'id_user' => 4,
+            'id_history' => 11,
+            'comments' => 'Consulta por alimentación.',
+            'afflictions_procedures' => 'Se le recetó una comida para gatos mayores, la que consumía era para gatos jóvenes.',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
     }
 }

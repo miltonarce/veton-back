@@ -121,5 +121,16 @@ class ClinicalHistoriesTableSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
+        DB::table('clinicalhistories')->insert([
+            'id_history' => 11,
+            'id_pet' => 10,
+            'id_user' => 4,
+            'id_veterinary' => 1,
+            'comments' => 'Gato de 8 años de edad. No presenta ninguna patología previa.',
+            'hide_comments' => 'Trato amigable y sin problemas.',
+            'afflictions_procedures' => 'Fué castrado al año de edad.',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
     }
 }
