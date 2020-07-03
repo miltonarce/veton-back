@@ -62,4 +62,10 @@ class Veterinary extends Model
         return $this->morphToMany(Friends::class, 'user_veterinary_friendship');
     }
 
+    public function workUsers()
+    {
+        return $this->belongsToMany(User::class, 'user_veterinary', 'id_veterinary', 'id_user');
+        //->withPivot('id_user');
+    }
+
 }

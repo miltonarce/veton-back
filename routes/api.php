@@ -47,6 +47,8 @@ Route::get('/users/search/{input}', 'Api\\UsersController@search');
 //Users update
 Route::put('/users/{idUser}', 'Api\\UsersController@editUser');
 
+//Route::get('/users/vet/{idVet}', 'Api\\UsersController@findByVet');
+
 // ClinicalHistories (Obtener todas las historias clinicas)
 Route::get('clinicalhistories', 'Api\\ClinicalHistoriesController@all');
 // ClinicalHistories por veterinaria
@@ -95,6 +97,7 @@ Route::get('vaccines', 'Api\\VaccinesController@all');
 Route::get('dewormers', 'Api\\DewormersController@all');
 Route::post('pets', 'Api\\PetsController@store');
 Route::get('veterinaries/{idUser}', 'Api\\VeterinariesController@findByUser');
+Route::get('veterinary/{idVet}', 'Api\\VeterinariesController@findById');
 //});
 /*
 Route::group(['middleware' => 'api'], function() {

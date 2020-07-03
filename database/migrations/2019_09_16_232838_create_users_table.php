@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 255);
             $table->date('birthday')->nullable();
             $table->string('image', 255)->nullable();
+            $table->bigInteger('phone')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

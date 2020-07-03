@@ -69,10 +69,32 @@ class VeterinariesController extends Controller
     public function findByUser($idUser)
     {
         try{
-            $veterinaries = Veterinary::where('id_user', '=', $idUser)->get();
+            $veterinaries_approved = Veterinary::where('id_user', '=', $idUser)->get();
+            $veterinaries_pending_approval = VeterinaryPendingApproval::where('id_user', '=', $idUser)->get();
+            $veterinaries = array_merge($veterinaries_approved->toArray(), $veterinaries_pending_approval->toArray());
             return response()->json([
                 'success'    => true,
                 'veterinary' => $veterinaries
+            ]);
+        }catch(QueryException $e){
+            return response()->json([
+                'success' => false,
+                'msg'     => 'Se produjo un error al obtener la veterinaria',
+                'stack'   => $e
+            ]);
+        }
+
+    }
+
+    public function findById($idVet)
+    {
+        try{
+            $veterinary = Veterinary::where('id_veterinary', '=', $idVet)->first();
+            $users = Veterinary::find($idVet)->workUsers()->get();
+            return response()->json([
+                'success'    => true,
+                'veterinary' => $veterinary,
+                'doctors' => $users
             ]);
         }catch(QueryException $e){
             return response()->json([

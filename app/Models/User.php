@@ -17,7 +17,7 @@ class User extends Authenticatable implements JWTSubject
     use SoftDeletes;
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['name', 'last_name', 'dni', 'email', 'birthday', 'image', 'password', 'id_role'];
+    protected $fillable = ['name', 'last_name', 'dni', 'email', 'birthday', 'image', 'phone', 'password', 'id_role'];
 
     protected $hidden = [
         'password', 'remember_token'
@@ -79,6 +79,12 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function workVets()
+    {
+        return $this->belongsToMany(Veterinary::class, 'user_veterinary', 'id_user', 'id_veterinary' );
+            //withPivot('id_veterinary');
     }
 
 }
