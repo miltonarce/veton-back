@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Api;
 
+use App\Models\Veterinary;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
 use App\Http\Controllers\Controller;
