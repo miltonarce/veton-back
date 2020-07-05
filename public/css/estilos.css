@@ -32,7 +32,7 @@ body {
 .main-content.container {
     padding: 25px;
     background-size: cover;
-    background-image: url(../recursos/pattern-veton2.png);
+    background-image: url(../recursos/pattern-veton.jpg);
 }
 .main-content.container h2 {
     text-align: center;
@@ -48,7 +48,7 @@ body {
     font-family: "poppinsregular";
     font-size: 1.25em;
     margin-bottom: 60px;
-    color: #4E4E4E;
+    color: white;
 }
 .subtitulo_index {
     font-family: "poppinsmedium";
@@ -61,7 +61,6 @@ div.index_container {
 
 
 .main-footer {
-    margin-top: 20px;
     padding: 20px;
     background-color: #6a1c9d;
     text-align: center;
@@ -77,8 +76,9 @@ div.index_container {
     margin: 20px;
 }
 table.table-bordered{
-    border:1px solid #6a1c9d;
     margin-top:20px;
+    background-color: white;
+    width: 70%!important;
 }
 table.table-bordered > thead > tr > th{
     border:1px solid #6a1c9d;
@@ -132,5 +132,68 @@ td.celda_acciones {
 
 .login_wrapper {
     margin: 0 20%;
+    color: rgba(0, 0, 0, 0.87);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 23px;
+}
+.box{
+    margin: 0;
+    color: rgba(0, 0, 0, 0.87);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 23px;
+    text-align: center;
+}
+.login{
+    background-color: #5c2299!important;
+    border-color: #5c2299!important;
+    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)!important;
+    border-radius: 5rem!important;
+
+}
+form input{
+
+    border-bottom: 1px solid #ddd!important;
+    width: 100%!important;
+    border-top: 0!important;
+    border-left: 0!important;
+    border-right: 0!important;
+    height: 1.1875em!important;
+    margin: 0!important;
+    display: block!important;
+    padding: 6px 0 7px!important;
+    min-width: 0!important;
+    background: none!important;
+    box-sizing: content-box!important;
+}
+form input:hover{
+    border-bottom: 1px solid black!important;
+
+    border-top: 0!important;
+    border-left: 0!important;
+    border-right: 0!important;
+}
+form input:focus{
+    border-bottom: 1px solid #5c2299!important;
+    box-shadow: none!important;
+    border-top: 0!important;
+    border-left: 0!important;
+    border-right: 0!important;
+}
+h1{
+    color: #FE3090!important;
+    text-align: center;
+    font-weight: bolder;
+}
+main{
+    margin: 0!important;
+    box-sizing: unset!important;
 }
 
+table, thead, th, td {
+    border-left: none;
+    border-right: none;
+}

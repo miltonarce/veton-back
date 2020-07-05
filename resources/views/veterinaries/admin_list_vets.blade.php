@@ -12,46 +12,48 @@
 
     <h1 class="titulo_index">PANEL DE ADMINISTRACIÓN</h1>
     <p class="parrafo_index">Administrador: Esta es la lista de las veterinarias que actualmente están registradas en VetOn</p>
-    <h2 class="subtitulo_index">Veterinarias Registradas</h2>
-    <div class="table-responsive-lg">
-        <table class="table table-striped table-bordered table-hover">
-            <thead>
-            <tr>
-                <th>ID de la Veterinaria</th>
-                <th>ID del Usuario</th>
-                <th>Nombre Legal</th>
-                <th>Nombre de fantasía</th>
-                <th>Cuit/Cuil</th>
-                <th>Teléfono 1</th>
-                <th>Teléfono 2</th>
-                <th>Dirección</th>
-                <th>Entre calles</th>
-                <th>Acciones</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($veterinariesList as $veterinary)
+    <div class="box">
+        <h2 class="subtitulo_index">Veterinarias Registradas</h2>
+        <div class="table-responsive-lg">
+            <table class="table table-striped table-hover">
+                <thead>
                 <tr>
-                    <td>{{ $veterinary->id_veterinary }}
-                    <td>{{ $veterinary->id_user }}
-                    <td>{{ $veterinary->business_name }}
-                    <td>{{ $veterinary->fantasy_name }}
-                    <td>{{ $veterinary->cuit_cuil }}
-                    <td>{{ $veterinary->phone1 }}
-                    <td>{{ $veterinary->phone2 }}
-                    <td>{{ $veterinary->street }}
-                    <td>{{ $veterinary->between_streets }}
-                    <td class="celda_acciones">
-                        <form action="{{ url('veterinaries/' . $veterinary->id_veterinary . '/eliminarRegistrada') }}" method="post" class="veterinary-form-eliminar">
-                        @csrf
-                        @method('DELETE')
-                            <button class="icono_eliminar">Eliminar</button>
-                        </form>
-                    </td>
+                    <th>ID de la Veterinaria</th>
+                    <th>ID del Usuario</th>
+                    <th>Nombre Legal</th>
+                    <th>Nombre de fantasía</th>
+                    <th>Cuit/Cuil</th>
+                    <th>Teléfono 1</th>
+                    <th>Teléfono 2</th>
+                    <th>Dirección</th>
+                    <th>Entre calles</th>
+                    <th>Acciones</th>
                 </tr>
-            @endforeach
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                @foreach($veterinariesList as $veterinary)
+                    <tr>
+                        <td>{{ $veterinary->id_veterinary }}
+                        <td>{{ $veterinary->id_user }}
+                        <td>{{ $veterinary->business_name }}
+                        <td>{{ $veterinary->fantasy_name }}
+                        <td>{{ $veterinary->cuit_cuil }}
+                        <td>{{ $veterinary->phone1 }}
+                        <td>{{ $veterinary->phone2 }}
+                        <td>{{ $veterinary->street }}
+                        <td>{{ $veterinary->between_streets }}
+                        <td class="celda_acciones">
+                            <form action="{{ url('veterinaries/' . $veterinary->id_veterinary . '/eliminarRegistrada') }}" method="post" class="veterinary-form-eliminar">
+                            @csrf
+                            @method('DELETE')
+                                <button class="icono_eliminar">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
 </div>
     <script>
         window.addEventListener('DOMContentLoaded', function() {
