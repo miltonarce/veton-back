@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Pet;
+use App\Models\Veterinary;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller
 {
@@ -88,5 +90,34 @@ class UsersController extends Controller
         }
         return $data;
     }
+
+    public function findByVet($idVet)
+    {
+        /*$users = DB::table('users')
+        ->join('user_veterinary', 'user_veterinary.id_user', '=', 'users.id_user')
+        ->join('veterinaries', 'veterinaries.id_veterinary', '=', 'user_veterinary.id_veterinary')
+        ->select('users.name', 'users.last_name', 'users.email', 'users.image')
+        ->where('veterinaries.id_veterinary', '=', $idVet)
+        ->get();
+        return response()->json($users);*/
+
+        /*$users = Veterinary::find($idVet)->workUsers()->get();
+        return response()->json($users);*/
+
+        /*try{
+            $users = Veterinary::find($idVet)->workUsers()->get();
+            return response()->json([
+                'success'    => true,
+                'users' => $users
+            ]);
+        }catch(QueryException $e) {
+            return response()->json([
+                'success' => false,
+                'msg' => 'Se produjo un error al obtener los médicos veterinarios',
+                'stack' => $e
+            ]);
+        }*/
+    }
+
 
 }

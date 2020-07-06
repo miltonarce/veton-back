@@ -13,7 +13,7 @@ class VeterinaryPendingApproval extends Model
     protected $primaryKey = 'id_veterinary';
 
     /** @var array La lista de campos que se pueden cargar masivamente. */
-    protected $fillable = ['id_user', 'business_name', 'fantasy_name', 'cuit_cuil', 'phone1', 'phone2', 'street', 'between_streets','approved'];
+    protected $fillable = ['id_user', 'business_name', 'fantasy_name', 'cuit_cuil','image', 'phone1', 'phone2', 'street', 'between_streets','approved'];
 
     /** @var array las reglas de validación. */
     public static $rules = [
