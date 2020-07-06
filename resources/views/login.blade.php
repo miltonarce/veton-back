@@ -26,19 +26,20 @@ Página Principal
             @csrf
             <div class="form-group">
                 <label for="email">Email</label>
+
                 <input type="text" id="email" name="email" class="form-control" value="<?= old('email');?>">
                 @if($errors->has('email'))
                     <div class="alert alert-danger">{{ $errors->first('email') }}</div>
                 @endif
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password">Contraseña</label>
                 <input type="password" id="password" name="password" class="form-control">
                 @if($errors->has('password'))
                     <div class="alert alert-danger">{{ $errors->first('password') }}</div>
                 @endif
             </div>
-            <button class="btn btn-primary btn-block">Ingresar</button>
+            <input type="submit" value="INGRESAR" class="btn btn-primary btn-block login"/>
         </form>
     </div>
 @endsection
