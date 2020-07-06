@@ -15,7 +15,7 @@ class ClinicalHistory extends Model
     protected $dates = ['deleted_at'];
 
     /** @var array La lista de campos que se pueden cargar masivamente. */
-    protected $fillable = ['id_pet', 'id_user', 'id_veterinary', 'comments', 'hide_comments', 'afflictions_procedures', 'image_1', 'image_2', 'image_3'];
+    protected $fillable = ['id_pet', 'id_user', 'id_veterinary', 'comments', 'hide_comments', 'afflictions_procedures', 'image_1', 'image_2', 'image_3','image_4','image_5'];
     
     /** @var array las reglas de validación. */
     public static $rules = [

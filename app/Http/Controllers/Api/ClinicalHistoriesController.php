@@ -28,7 +28,7 @@ class ClinicalHistoriesController extends Controller
     {
         try {
             $request->validate(ClinicalHistory::$rules, ClinicalHistory::$errorMessages);
-            $data = $request->all();
+            $data = $this->saveImageIfExists($request, $request->all());
             $data['id_pet'] = $idPet;
             ClinicalHistory::create($data);
             return response()->json([
@@ -126,4 +126,37 @@ class ClinicalHistoriesController extends Controller
         return response()->json($clinicalhistories);
     }
 
+
+    private function requireImage($request ,$nameProp)
+    {   
+        $image = $request->file($nameProp);
+        $nameImageWithExtension = time() . "." . $image->extension();
+        $image->move(public_path('./imgs/historiesimages/'), $nameImageWithExtension);
+        return $nameImageWithExtension;
+    }
+
+       /**
+     * Handle input images from save and move to folder assets
+     * @param Request $request
+     * @param array $data
+     * @return array
+     */
+    private function saveImageIfExists($request, $data) 
+    {   
+        
+        if($request->hasFile('image1'))
+            $data['image_1'] = $this->requireImage($request, 'image1');
+        if($request->hasFile('image2'))
+            $data['image_2'] = $this->requireImage($request, 'image2');
+        if($request->hasFile('image3'))
+            $data['image_3'] = $this->requireImage($request, 'image3');
+        if($request->hasFile('image4'))
+            $data['image_4'] = $this->requireImage($request, 'image4');
+        if($request->hasFile('image5'))
+            $data['image_5'] = $this->requireImage($request, 'image5');
+
+        return $data;
+    }
+
+    
 }
