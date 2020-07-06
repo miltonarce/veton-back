@@ -21,6 +21,8 @@ class CreateClinicalhistoriesTable extends Migration
             $table->string('image_1', 255)->nullable();
             $table->string('image_2', 255)->nullable();
             $table->string('image_3', 255)->nullable();
+            $table->string('image_4', 255)->nullable();
+            $table->string('image_5', 255)->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
