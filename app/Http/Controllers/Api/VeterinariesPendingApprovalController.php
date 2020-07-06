@@ -6,6 +6,7 @@ use App\Models\VeterinaryPendingApproval;
 use App\Models\User;
 use App\Models\Veterinary;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
@@ -37,6 +38,26 @@ class VeterinariesPendingApprovalController extends Controller
             return redirect(url('/veterinaries'))
                 ->with('message', 'Veterinaria aceptada exitosamente.');
 
+        } catch (QueryException $e) {
+            return response()->json([
+                'success' => false,
+                'msg' => 'Se produjo un error al crear una veterinaria',
+                'stack' => $e]);
+        }
+    }
+
+    public function storeNewVetPendingApproval(Request $request)
+    {
+         try {
+            $request->validate(VeterinaryPendingApproval::$rules, VeterinaryPendingApproval::$errorMessages);
+            $data = $this->saveImageIfExists($request, $request->all());
+            $data['approved'] = 1;
+            VeterinaryPendingApproval::create($data);
+             return response()->json([
+                 'success' => true,
+                 'msg' => 'La veterinaria se creó exitosamente',
+                 'stack' => ''
+             ]);
         } catch (QueryException $e) {
             return response()->json([
                 'success' => false,
@@ -92,5 +113,18 @@ class VeterinariesPendingApprovalController extends Controller
         $user = Users::view($id);
 
         return response()->json($user);
+    }
+
+    private function saveImageIfExists($request, $data)
+    {
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $nameImageWithExtension = time() . "." . $image->extension();
+            $image->move(public_path('./imgs'), $nameImageWithExtension);
+            $data['image'] = $nameImageWithExtension;
+        } else {
+            $data['image'] = '';
+        }
+        return $data;
     }
 }

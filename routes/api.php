@@ -91,6 +91,7 @@ Route::get('veterinaries', 'Api\\VeterinariesController@all');
 //Route::post('veterinaries', 'Api\\VeterinariesController@storePendingApproval');
 //Route::post('veterinaries', 'Api\\VeterinariesController@store');
 Route::post('veterinaries', 'Api\\VeterinariesPendingApprovalController@storePendingApproval');
+Route::post('vet', 'Api\\VeterinariesPendingApprovalController@storeNewVetPendingApproval');
 Route::get('breeds', 'Api\\BreedsController@all');
 Route::get('types', 'Api\\TypesController@all');
 Route::get('vaccines', 'Api\\VaccinesController@all');
