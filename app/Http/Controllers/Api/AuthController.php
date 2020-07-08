@@ -58,7 +58,7 @@ class AuthController extends Controller
         return response()->json(['success' => true, 'msg' => 'Se deslogueo correctamente!']);
     }
 
-    /**
+     /**
      * Register new user, handle transaction to better aproach to handle errors
      * @param Request $request
      * @return Response
@@ -166,25 +166,39 @@ class AuthController extends Controller
                 'email' => $request['email'],
                 'password' => $request['password']
             ];
-            if (! $token = auth()->attempt($credentials)) {
-                return redirect(url('/'))
-                    ->withInput($request->all())
-                    ->with('message', 'Error al tratar de iniciar sesión. Las credenciales introducidas no coinciden con nuestros registros.');
+            if (auth()->attempt($credentials)) {
+                $user = auth()->user();
+                if ($this->isUserAdmin($user['id_role'])) {
+                    return redirect(url('/veterinaries'));
+                    // ->withCookie('token', $token, auth()->factory()->getTTL() * 60, '/', null, false, true);
+                }else {
+                    return redirect(url('/'))
+                        ->withInput($request->all())
+                        ->with('message', 'Error al tratar de iniciar sesión. Las credenciales introducidas no coinciden con nuestros registros.');
+                }
             }
-            $user = auth()->user();
-            if ($this->isUserAdmin($user['id_role'])) {
-                return redirect(url('/veterinaries'));
-            }
-            return response()->json([
+            //$user = auth()->user();
+            //if ($this->isUserAdmin($user['id_role'])) {
+              //  return redirect(url('/veterinaries'));
+               // ->withCookie('token', $token, auth()->factory()->getTTL() * 60, '/', null, false, true);
+           // }
+            /*return response()->json([
                 'success' => true,
                 'msg' => 'Login exitoso',
                 'additional_info' => $this->getAditionalInfo($user),
-            ])->withCookie('token', $token, auth()->factory()->getTTL() * 60, '/', null, false, true);
+            ])->withCookie('token', $token, auth()->factory()->getTTL() * 60, '/', null, false, true);*/
         } else {
             return redirect(url('/'))
                 ->withInput($request->all())
                 ->with('message', 'El email ingresado no es válido');
         }
+    }
+
+    public function doLogoutAdmin()
+    {
+        Auth::logout();
+
+        return redirect(url('/'))->with('message', 'Sesión cerrada. Nos vemos en Disney.');
     }
     private function isUserAdmin($idRole)
     {

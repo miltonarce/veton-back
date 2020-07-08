@@ -22,7 +22,7 @@ Página Principal
             <div class="alert alert-danger">{{ Session::get('message') }}</div>
         @endif
 
-        <form action="<?= url('/');?>" method="post">
+        <form action="<?= url('/loginAdm');?>" method="post">
             @csrf
             <div class="form-group">
                 <label for="email">Email</label>

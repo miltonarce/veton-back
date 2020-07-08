@@ -14,7 +14,8 @@
 Route::get('/', function () {
     return view('login');
 });
-Route::post('/', 'Api\\AuthController@loginAdmin');
+Route::post('/loginAdm', 'Api\\AuthController@loginAdmin');
+Route::get('/logout', 'AuthController@doLogoutAdmin');
 Route::get('/veterinaries', 'Api\\VeterinariesPendingApprovalController@index');
 Route::get('/veterinaries/list', 'Api\\VeterinariesController@index');
 Route::delete('/veterinaries/{id}/eliminar', 'Api\\VeterinariesPendingApprovalController@eliminar')
