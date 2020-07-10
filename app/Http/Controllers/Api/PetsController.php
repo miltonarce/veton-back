@@ -30,7 +30,7 @@ class PetsController extends Controller
      */
     public function detail($id)
     {
-        $pets = Pet::with(['type', 'breed', 'gender', 'user', 'clinicalHistory', 'clinicalHistory.consultations'])->findOrFail($id);
+        $pets = Pet::with(['type', 'breed', 'gender', 'user', 'clinicalHistory', 'clinicalHistory.consultations','clinicalHistory.veterinary'])->findOrFail($id);
         return response()->json($pets);
     }
 
