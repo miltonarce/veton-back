@@ -42,8 +42,10 @@ Route::get('/pets/users/{id}/statistics', 'Api\\PetsController@statistics');
 
 // Users (Obtener un usuario por dni)
 Route::get('/users/{dni}', 'Api\\UsersController@find');
-// Users Obtener usuarios por dni like o nombre)
+// Users (Obtener usuarios por dni like o nombre)
 Route::get('/users/search/{input}', 'Api\\UsersController@search');
+// Users (Obtener médicos por dni like o nombre)
+Route::get('/users/searchdoctor/{input}', 'Api\\UsersController@searchDoctor');
 //Users update
 Route::put('/users/{idUser}', 'Api\\UsersController@editUser');
 
@@ -100,6 +102,7 @@ Route::post('pets', 'Api\\PetsController@store');
 Route::post('doc', 'Api\\VeterinariesController@storeDoc');
 Route::get('veterinaries/{idUser}', 'Api\\VeterinariesController@findByUser');
 Route::get('veterinary/{idVet}', 'Api\\VeterinariesController@findById');
+Route::post('adddocsearch', 'Api\\VeterinariesController@storeDocBySearch');
 //});
 /*
 Route::group(['middleware' => 'api'], function() {
