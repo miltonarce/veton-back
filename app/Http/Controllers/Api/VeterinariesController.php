@@ -176,4 +176,25 @@ class VeterinariesController extends Controller
         }
         return $data;
     }
+
+    public function deactivateDoc(Request $request)
+    {
+        try {
+            $id_user = $request['id_user'];
+            $id_veterinary = $request['id_veterinary'];
+            DB::table('user_veterinary')->where('id_user', '=', $id_user)->where ( 'id_veterinary', '=', $id_veterinary) ->delete();
+            return response()->json([
+                'id_user' => $id_user,
+                'id_veterinary' => $id_veterinary,
+                'success' => true,
+                'msg' => 'El médico se desactivó exitosamente',
+                'stack' => ''
+            ]);
+        } catch (QueryException $e) {
+            return response()->json([
+                'success' => false,
+                'msg' => 'Se produjo un error al desactivar el médico',
+                'stack' => $e]);
+        }
+    }
 }
