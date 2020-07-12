@@ -164,33 +164,6 @@ class VeterinariesController extends Controller
         }
     }
 
-    /**
-     * Update veterinary
-     * @param Request $request
-     * @param int $idVet
-     * @return Response
-     */
-    public function editVet(Request $request, $idVet)
-    {
-        try {
-            $request->validate(Veterinary::$rules, Veterinary::$errorMessages);
-            $data = $this->saveImageIfExists($request, $request->all());
-            $veterinary = Veterinary::findOrFail($idVet);
-            $veterinary->update($data);
-            return response()->json([
-                'success' => true,
-                'msg' => 'La veterinaria se editó correctamente.',
-                'stack'=>''
-            ]);
-        } catch (QueryException $e) {
-            return response()->json([
-                'success' => false,
-                'msg' => 'Se produjo un error al editar la veterinaria',
-                'stack' => $e
-            ]);
-        }
-    }
-
     private function saveImageIfExists($request, $data)
     {
         if ($request->hasFile('image')) {
@@ -203,26 +176,25 @@ class VeterinariesController extends Controller
         }
         return $data;
     }
-  
-    public function storeDocBySearch(Request $request)
+
+    public function deactivateDoc(Request $request)
     {
         try {
-            $data = [
-                'id_user'=>$request['idUser'],
-                'id_veterinary'=>$request['idVet'],
-            ];
-            DB::table('user_veterinary')->insert($data);
+            $id_user = $request['id_user'];
+            $id_veterinary = $request['id_veterinary'];
+            DB::table('user_veterinary')->where('id_user', '=', $id_user)->where ( 'id_veterinary', '=', $id_veterinary) ->delete();
             return response()->json([
+                'id_user' => $id_user,
+                'id_veterinary' => $id_veterinary,
                 'success' => true,
-                'msg' => 'El médico se agregó exitosamente',
+                'msg' => 'El médico se desactivó exitosamente',
                 'stack' => ''
             ]);
         } catch (QueryException $e) {
             return response()->json([
                 'success' => false,
-                'msg' => 'Se produjo un error al agregar el médico',
+                'msg' => 'Se produjo un error al desactivar el médico',
                 'stack' => $e]);
         }
     }
-
 }
