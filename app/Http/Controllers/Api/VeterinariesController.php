@@ -197,4 +197,31 @@ class VeterinariesController extends Controller
                 'stack' => $e]);
         }
     }
+
+    /**
+     * Update veterinary
+     * @param Request $request
+     * @param int $idVet
+     * @return Response
+     */
+    public function editVet(Request $request, $idVet)
+    {
+        try {
+            $request->validate(Veterinary::$rules, Veterinary::$errorMessages);
+            $data = $this->saveImageIfExists($request, $request->all());
+            $veterinary = Veterinary::findOrFail($idVet);
+            $veterinary->update($data);
+            return response()->json([
+                'success' => true,
+                'msg' => 'La veterinaria se editó correctamente.',
+                'stack'=>''
+            ]);
+        } catch (QueryException $e) {
+            return response()->json([
+                'success' => false,
+                'msg' => 'Se produjo un error al editar la veterinaria',
+                'stack' => $e
+            ]);
+        }
+    }
 }
