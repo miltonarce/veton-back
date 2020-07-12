@@ -196,5 +196,5 @@ class VeterinariesController extends Controller
                 'msg' => 'Se produjo un error al desactivar el médico',
                 'stack' => $e]);
         }
-    }
+    } //hola
 }
