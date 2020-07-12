@@ -103,6 +103,7 @@ Route::post('doc', 'Api\\VeterinariesController@storeDoc');
 Route::get('veterinaries/{idUser}', 'Api\\VeterinariesController@findByUser');
 Route::get('veterinary/{idVet}', 'Api\\VeterinariesController@findById');
 Route::post('adddocsearch', 'Api\\VeterinariesController@storeDocBySearch');
+Route::post('deactivateDoc', 'Api\\VeterinariesController@deactivateDoc');
 //});
 /*
 Route::group(['middleware' => 'api'], function() {

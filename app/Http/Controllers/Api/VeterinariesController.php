@@ -177,6 +177,7 @@ class VeterinariesController extends Controller
         return $data;
     }
 
+
     public function storeDocBySearch(Request $request)
     {
         try {
@@ -197,6 +198,5 @@ class VeterinariesController extends Controller
                 'stack' => $e]);
         }
     }
-
 
 }
