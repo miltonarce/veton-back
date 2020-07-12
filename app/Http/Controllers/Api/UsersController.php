@@ -42,9 +42,23 @@ class UsersController extends Controller
      */
     public function search($input) 
     {
-        $users = User::where('email', 'like', '%' . $input . "%")->orWhere('dni', 'like', '%' . $input . "%")->get();
+        $users = User::where('id_role', '=', 4)->where('email', 'like', '%' . $input . "%")->orWhere('dni', 'like', '%' . $input . "%")->get();
         return response()->json($users);
     }
+
+    /**
+     * Search users via like name or dni
+     * @param int $input
+     * @return Response
+     */
+    public function searchDoctor($input)
+    {
+        $users = User::where('id_role', '=', 3)
+            ->where('email', 'like', '%' . $input . "%")
+            ->orWhere('dni', 'like', '%' . $input . "%")->get();
+        return response()->json($users);
+    }
+
     /**
      * Update pet
      * @param Request request
