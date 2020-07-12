@@ -76,6 +76,9 @@ Route::put('consultations/{idConsultation}', 'Api\\ConsultationsController@editC
 Route::delete('consultations/{idConsultation}', 'Api\\ConsultationsController@removeConsultation');
 //Consultation traer una consulta por id
 Route::get('consultation/{id}', 'Api\\ConsultationsController@findOneById');
+//Statistics (Estadisticas consultas por veterinaria de un usuario)
+Route::get('/consultations/veterinary/{id}/statistics', 'Api\\ConsultationsController@statistics');
+
 
 // Appointments (Registrar un turno)
 Route::post('appointments', 'Api\\AppointmentsController@save');

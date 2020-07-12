@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\ClinicalHistory;
 use App\Models\Consultation;
+use App\Models\Veterinary;
 use Carbon\Carbon;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
@@ -135,5 +136,35 @@ class ConsultationsController extends Controller
                 'stack' => $e
             ]);
         }
+    }
+
+    /**
+     * Retrieve statics from consultations
+     * @param int $idVet
+     * @return Response
+     */
+    public function statistics($id)
+    {
+        $statistics = [];
+        $veterinaries = Veterinary::where('id_user', '=', $id)->get();
+        foreach ($veterinaries as $vet) {
+            $clinicalHistories = ClinicalHistory::all()->where('id_veterinary', '=', $vet->id_veterinary);
+            $cantConsultas = [];
+            foreach($clinicalHistories as $history){
+                $consultations = Consultation::all()->where('id_history', '=', $history->id_history);
+                /*->groupBy(function($val) {
+                    return Carbon::parse($val->created_at)->format('M');
+                });*/
+                 array_push($cantConsultas, count($consultations));
+
+            }
+            //$completName = $pet->name.' '.$pet->last_name;
+            array_push($statistics, ["name"=> $vet->business_name, $cantConsultas]);
+        }
+        return response()->json([
+            'success' => true,
+            'msg' => null,
+            'data' => $statistics
+        ]);
     }
 }
