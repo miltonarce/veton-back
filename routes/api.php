@@ -46,6 +46,8 @@ Route::get('/users/{dni}', 'Api\\UsersController@find');
 Route::get('/users/search/{input}', 'Api\\UsersController@search');
 // Users (Obtener médicos por dni like o nombre)
 Route::get('/users/searchdoctor/{input}', 'Api\\UsersController@searchDoctor');
+// Users (Obtener médicos que ya trabajan en una veterinaria)
+Route::get('/users/docworking/{input}', 'Api\\UsersController@getDoctorAlreadyWorking');
 //Users update
 Route::put('/users/{idUser}', 'Api\\UsersController@editUser');
 

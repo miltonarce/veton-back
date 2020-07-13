@@ -224,4 +224,25 @@ class VeterinariesController extends Controller
             ]);
         }
     }
+
+    public function storeDocBySearch(Request $request)
+    {
+        try {
+            $data = [
+                'id_user' => $request['idUser'],
+                'id_veterinary' => $request['idVet'],
+            ];
+            DB::table('user_veterinary')->insert($data);
+            return response()->json([
+                'success' => true,
+                'msg' => 'El médico se agregó exitosamente',
+                'stack' => ''
+            ]);
+        } catch (QueryException $e) {
+            return response()->json([
+                'success' => false,
+                'msg' => 'Se produjo un error al agregar el médico',
+                'stack' => $e]);
+        }
+    }
 }

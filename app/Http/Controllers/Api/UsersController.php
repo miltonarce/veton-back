@@ -59,6 +59,24 @@ class UsersController extends Controller
         return response()->json($users);
     }
 
+    public function getDoctorAlreadyWorking($idVet)
+    {
+        try{
+            $users = Veterinary::find($idVet)->workUsers()->get();
+            return response()->json([
+                'success'    => true,
+                'doctors' => $users
+            ]);
+        }catch(QueryException $e){
+            return response()->json([
+                'success' => false,
+                'msg'     => 'Se produjo un error al obtener la veterinaria',
+                'stack'   => $e
+            ]);
+        }
+
+    }
+
     /**
      * Update pet
      * @param Request request
