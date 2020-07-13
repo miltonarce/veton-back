@@ -222,7 +222,7 @@ class VeterinariesController extends Controller
                 'msg' => 'Se produjo un error al editar la veterinaria',
                 'stack' => $e
             ]);
-        } //hola
+        }
     }
 
     public function storeDocBySearch(Request $request)
