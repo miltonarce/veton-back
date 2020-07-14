@@ -245,4 +245,29 @@ class VeterinariesController extends Controller
                 'stack' => $e]);
         }
     }
+
+    /**
+     * Metodo para buscar veterinarias en las que trabaja un medico
+     */
+    public function findVetByUserVet($idUserVet)
+    {
+        try {
+            //  $linked_veterinaries = [];
+            // $users = DB::table('user_veterinary')->where('id_user', '=', $idUserVet)->get();
+            // foreach ($users as $u) {
+            //     $vet = DB::table('veterinaries')->where('id_veterinary', '=', $u->id_veterinary)->get();
+            //      array_push($linked_veterinaries, $vet[0]);
+            // }
+            $linked_veterinaries = User::find($idUserVet)->workVets()->get();
+            return response()->json([
+                'success'    => true,
+                'veterinariesForUser' => $linked_veterinaries,
+            ]);
+        } catch (QueryException $e) {
+            return response()->json([
+                'success' => false,
+                'msg' => 'Se produjo un error al buscar las veterinarias',
+                'stack' => $e]);
+        }
+    }
 }
