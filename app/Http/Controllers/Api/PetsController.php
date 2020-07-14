@@ -50,11 +50,11 @@ class PetsController extends Controller
      * @param int $idUser
      * @return Response
      */
-    public function findLastByVeterinary($idUser)
+    public function findLastByVeterinary($idUser, $idVet)
     {
        try {
             //busco a que veterinaria pertenece
-            $userVeterinaryInfo = DB::table('user_veterinary')->where('id_user', '=', $idUser)->first();
+            $userVeterinaryInfo = DB::table('user_veterinary')->where('id_veterinary', '=', $idVet)->first();
             //levanto el id de la vet
             $idVet = $userVeterinaryInfo->id_veterinary;
             //query para tener las 10 mascotas antendidas

@@ -29,7 +29,7 @@ Route::post('auth/register', 'Api\\AuthController@register');
 // Pets (Obtener todas las mascotas)
 Route::get('pets', 'Api\\PetsController@all');
 // Pets (Obtener las ultimas 10 mascotas atendidas por una veterinaria)
-Route::get('pets/last/veterinary/{idUser}', 'Api\\PetsController@findLastByVeterinary');
+Route::get('pets/last/veterinary/{idUser}/{idVet}', 'Api\\PetsController@findLastByVeterinary');
 // Pets (Obtener el detalle de una mascota)
 Route::get('pets/{id}', 'Api\\PetsController@detail');
 Route::put('pets/{id}', 'Api\\PetsController@editPet');
@@ -50,6 +50,7 @@ Route::get('/users/searchdoctor/{input}', 'Api\\UsersController@searchDoctor');
 Route::get('/users/docworking/{input}', 'Api\\UsersController@getDoctorAlreadyWorking');
 //Users update
 Route::put('/users/{idUser}', 'Api\\UsersController@editUser');
+
 
 //Route::get('/users/vet/{idVet}', 'Api\\UsersController@findByVet');
 
@@ -95,6 +96,8 @@ Route::delete('appointments/{user}/{idAppointment}', 'Api\\AppointmentsControlle
 Route::get('appointments/veterinary/{idVet}/{date}', 'Api\\AppointmentsController@findByVet');
 
 Route::get('veterinaries', 'Api\\VeterinariesController@all');
+//Buscar veterinarias en las que trabaja un medico
+Route::get('/veterinaries-to-work/{idUserVet}', 'Api\\VeterinariesController@findVetByUserVet');
 //Route::post('veterinaries', 'Api\\VeterinariesController@storePendingApproval');
 //Route::post('veterinaries', 'Api\\VeterinariesController@store');
 Route::post('veterinaries', 'Api\\VeterinariesPendingApprovalController@storePendingApproval');
