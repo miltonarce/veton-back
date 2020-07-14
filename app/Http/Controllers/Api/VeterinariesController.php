@@ -207,7 +207,7 @@ class VeterinariesController extends Controller
     public function editVet(Request $request, $idVet)
     {
         try {
-            $request->validate(Veterinary::$rules, Veterinary::$errorMessages);
+            //$request->validate(Veterinary::$rules, Veterinary::$errorMessages);
             $data = $this->saveImageIfExists($request, $request->all());
             $veterinary = Veterinary::findOrFail($idVet);
             $veterinary->update($data);

@@ -107,7 +107,7 @@ Route::post('pets', 'Api\\PetsController@store');
 Route::post('doc', 'Api\\VeterinariesController@storeDoc');
 Route::get('veterinaries/{idUser}', 'Api\\VeterinariesController@findByUser');
 Route::get('veterinary/{idVet}', 'Api\\VeterinariesController@findById');
-Route::put('vet/edit/{idVet}', 'Api\\VeterinariesController@editVet');
+Route::post('vet/edit/{idVet}', 'Api\\VeterinariesController@editVet');
 Route::post('adddocsearch', 'Api\\VeterinariesController@storeDocBySearch');
 Route::post('deactivateDoc', 'Api\\VeterinariesController@deactivateDoc');
 //});
