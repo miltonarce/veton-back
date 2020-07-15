@@ -7,7 +7,7 @@ body {
 
 #navbar_titulo{
     font-size: 0;
-    background: url(../recursos/Logo.png) no-repeat;
+    background: url(../recursos/logo.png) no-repeat;
     display: inline-block;
     height: 40px;
     text-indent: -9999px;
