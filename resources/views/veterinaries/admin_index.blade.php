@@ -35,7 +35,7 @@
                         <form action="{{ url('veterinaries/guardar') }}" method="post" class="veterinary-form-aceptar">
                             @csrf
                             @method('POST')
-
+                            <input type="hidden" value="{{$veterinary->image}}" name="image">
                             <tr>
                                 <td>{{ $veterinary->id_veterinary }}<input type="hidden" value="{{$veterinary->id_veterinary}}" name="id_veterinary"></td>
                                 <td>{{ $veterinary->id_user }}<input type="hidden" value="{{$veterinary->id_user}}" name="id_user"></td>

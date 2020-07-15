@@ -27,6 +27,14 @@ class User_VeterinaryTableSeeder extends Seeder
             'id_veterinary' => 3,
             'id_user' => 9,
         ]);
+        DB::table('user_veterinary')->insert([
+            'id_veterinary' => 4,
+            'id_user' => 8,
+        ]);
+        DB::table('user_veterinary')->insert([
+            'id_veterinary' => 5,
+            'id_user' => 8,
+        ]);
     }
 
 }

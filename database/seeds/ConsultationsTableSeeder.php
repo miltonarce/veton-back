@@ -201,5 +201,329 @@ class ConsultationsTableSeeder extends Seeder
             'created_at' => date('2020-01-02 01:01:01'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 22,
+            'id_user' => 4,
+            'id_history' => 8,
+            'comments' => 'Consulta por alergia.',
+            'afflictions_procedures' => 'Se recetó aplicar pervinox para curar la piel irritada.',
+            'created_at' => date('2020-03-02 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 23,
+            'id_user' => 4,
+            'id_history' => 8,
+            'comments' => 'Consulta por diarrea.',
+            'afflictions_procedures' => 'Se recetó receta a base de arroz y pollo hervido.',
+            'created_at' => date('2020-04-02 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 24,
+            'id_user' => 4,
+            'id_history' => 8,
+            'comments' => 'Consulta por sarro dental.',
+            'afflictions_procedures' => 'Se realiza limpieza de dentadura.',
+            'created_at' => date('2020-05-02 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 25,
+            'id_user' => 4,
+            'id_history' => 8,
+            'comments' => 'Consulta por uña encarnada.',
+            'afflictions_procedures' => 'Se realiza pequeña cirugía para quitar la uña.',
+            'created_at' => date('2020-06-02 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 26,
+            'id_user' => 4,
+            'id_history' => 8,
+            'comments' => 'Consulta por uña diarrea.',
+            'afflictions_procedures' => 'Se indica dieta.',
+            'created_at' => date('2020-06-02 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 27,
+            'id_user' => 4,
+            'id_history' => 9,
+            'comments' => 'Consulta por mal aliento.',
+            'afflictions_procedures' => 'Se indica enjuage bucal.',
+            'created_at' => date('2020-02-02 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 28,
+            'id_user' => 4,
+            'id_history' => 9,
+            'comments' => 'Consulta por mal aliento.',
+            'afflictions_procedures' => 'Se indica otro enjuage bucal.',
+            'created_at' => date('2020-02-15 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 29,
+            'id_user' => 4,
+            'id_history' => 9,
+            'comments' => 'Consulta por diarrea.',
+            'afflictions_procedures' => 'Se indica dieta.',
+            'created_at' => date('2020-04-15 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 30,
+            'id_user' => 4,
+            'id_history' => 11,
+            'comments' => 'Consulta por diarrea.',
+            'afflictions_procedures' => 'Se indica dieta.',
+            'created_at' => date('2020-04-02 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 31,
+            'id_user' => 4,
+            'id_history' => 11,
+            'comments' => 'Consulta por diarrea.',
+            'afflictions_procedures' => 'Se cambia dieta.',
+            'created_at' => date('2020-04-15 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 32,
+            'id_user' => 4,
+            'id_history' => 11,
+            'comments' => 'Consulta por alergía.',
+            'afflictions_procedures' => 'Se indica antialérgico.',
+            'created_at' => date('2020-04-30 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 33,
+            'id_user' => 8,
+            'id_history' => 12,
+            'comments' => 'Consulta por alergía.',
+            'afflictions_procedures' => 'Se indica antialérgico.',
+            'created_at' => date('2020-01-01 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 34,
+            'id_user' => 8,
+            'id_history' => 12,
+            'comments' => 'Consulta por diarrea.',
+            'afflictions_procedures' => 'Se indica dieta.',
+            'created_at' => date('2020-01-15 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 35,
+            'id_user' => 8,
+            'id_history' => 12,
+            'comments' => 'Consulta por diarrea.',
+            'afflictions_procedures' => 'Se indica dieta.',
+            'created_at' => date('2020-01-30 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 36,
+            'id_user' => 8,
+            'id_history' => 12,
+            'comments' => 'Consulta por uña encarnada.',
+            'afflictions_procedures' => 'Se realiza extracción de la uña.',
+            'created_at' => date('2020-02-15 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 37,
+            'id_user' => 8,
+            'id_history' => 12,
+            'comments' => 'Consulta por herida.',
+            'afflictions_procedures' => 'La herida de la uña no cocatriza, se aplica cicatrizante.',
+            'created_at' => date('2020-02-20 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 38,
+            'id_user' => 8,
+            'id_history' => 12,
+            'comments' => 'Consulta por herida.',
+            'afflictions_procedures' => 'Se quitan los puntos.',
+            'created_at' => date('2020-02-28 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 39,
+            'id_user' => 8,
+            'id_history' => 12,
+            'comments' => 'Consulta por alergia.',
+            'afflictions_procedures' => 'Se aplica antialérgico.',
+            'created_at' => date('2020-03-01 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 40,
+            'id_user' => 8,
+            'id_history' => 12,
+            'comments' => 'Consulta por diarrea.',
+            'afflictions_procedures' => 'Se indica dieta.',
+            'created_at' => date('2020-04-01 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 41,
+            'id_user' => 8,
+            'id_history' => 12,
+            'comments' => 'Consulta por diarrea.',
+            'afflictions_procedures' => 'Se indica nueva dieta.',
+            'created_at' => date('2020-04-15 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 42,
+            'id_user' => 8,
+            'id_history' => 12,
+            'comments' => 'Consulta por mal aliento.',
+            'afflictions_procedures' => 'Se indica enjuage bucal.',
+            'created_at' => date('2020-05-01 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 43,
+            'id_user' => 8,
+            'id_history' => 12,
+            'comments' => 'Consulta por sarro.',
+            'afflictions_procedures' => 'Se realiza limpieza dental.',
+            'created_at' => date('2020-06-01 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 44,
+            'id_user' => 8,
+            'id_history' => 12,
+            'comments' => 'Consulta por vómitos.',
+            'afflictions_procedures' => 'Se indica que es normal ya que comió pasto.',
+            'created_at' => date('2020-07-01 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 45,
+            'id_user' => 8,
+            'id_history' => 13,
+            'comments' => 'Consulta de rutina.',
+            'afflictions_procedures' => 'Se observa todo normal.',
+            'created_at' => date('2020-01-01 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 46,
+            'id_user' => 8,
+            'id_history' => 13,
+            'comments' => 'Consulta por alergia.',
+            'afflictions_procedures' => 'Se indica antialérgico.',
+            'created_at' => date('2020-02-01 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 47,
+            'id_user' => 8,
+            'id_history' => 13,
+            'comments' => 'Consulta por largo de uñas.',
+            'afflictions_procedures' => 'Se cortan las uñas.',
+            'created_at' => date('2020-03-01 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 48,
+            'id_user' => 8,
+            'id_history' => 13,
+            'comments' => 'Consulta por mal aliento.',
+            'afflictions_procedures' => 'Se indica enjuage bucal.',
+            'created_at' => date('2020-04-01 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 49,
+            'id_user' => 8,
+            'id_history' => 13,
+            'comments' => 'Consulta por sarro.',
+            'afflictions_procedures' => 'Se realiza limpieza dental.',
+            'created_at' => date('2020-05-01 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 50,
+            'id_user' => 8,
+            'id_history' => 13,
+            'comments' => 'Consulta por diarrea.',
+            'afflictions_procedures' => 'Se indica dieta.',
+            'created_at' => date('2020-05-15 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 51,
+            'id_user' => 8,
+            'id_history' => 13,
+            'comments' => 'Consulta por diarrea.',
+            'afflictions_procedures' => 'Se indica cambia dieta.',
+            'created_at' => date('2020-05-20 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 52,
+            'id_user' => 8,
+            'id_history' => 13,
+            'comments' => 'Consulta por diarrea.',
+            'afflictions_procedures' => 'Se indica suero.',
+            'created_at' => date('2020-05-28 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 53,
+            'id_user' => 8,
+            'id_history' => 13,
+            'comments' => 'Consulta por diarrea.',
+            'afflictions_procedures' => 'Se observa todo normal.',
+            'created_at' => date('2020-05-30 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 54,
+            'id_user' => 8,
+            'id_history' => 13,
+            'comments' => 'Consulta por alimento.',
+            'afflictions_procedures' => 'Se indica alimento de raza.',
+            'created_at' => date('2020-06-15 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 55,
+            'id_user' => 8,
+            'id_history' => 13,
+            'comments' => 'Consulta por alimento.',
+            'afflictions_procedures' => 'Se indica cambia alimento.',
+            'created_at' => date('2020-07-01 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 56,
+            'id_user' => 8,
+            'id_history' => 13,
+            'comments' => 'Consulta por alimento.',
+            'afflictions_procedures' => 'Se indica nuevo cambio de alimento.',
+            'created_at' => date('2020-07-10 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('consultations')->insert([
+            'id_consultation' => 57,
+            'id_user' => 8,
+            'id_history' => 13,
+            'comments' => 'Consulta por herida.',
+            'afflictions_procedures' => 'Se aplica cicatrizante.',
+            'created_at' => date('2020-07-14 01:01:01'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
     }
 }
