@@ -15,6 +15,7 @@ class ConsultationsTableSeeder extends Seeder
             'id_consultation' => 1,
             'id_user' => 4,
             'id_history' => 1,
+            'id_vaccine' =>1,
             'comments' => 'Se acerca a la consulta ya que no come hace dos días. No presenta signos de malestar estomacal o intestinal.',
             'afflictions_procedures' => 'Se le indica cambio de alimento balanceado.',
             'created_at' => date('2020-01-02 01:01:01'),

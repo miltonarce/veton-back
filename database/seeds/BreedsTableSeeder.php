@@ -326,5 +326,90 @@ class BreedsTableSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
+        DB::table('breeds')->insert([
+            'id_breed' => 46,
+            'id_type' =>1,
+            'breed' => 'Otros',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('breeds')->insert([
+            'id_breed' => 47,
+            'id_type' =>2,
+            'breed' => 'Otros',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('breeds')->insert([
+            'id_breed' => 48,
+            'id_type' =>3,
+            'breed' => 'Otros',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('breeds')->insert([
+            'id_breed' => 49,
+            'id_type' =>4,
+            'breed' => 'Otros',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('breeds')->insert([
+            'id_breed' => 50,
+            'id_type' =>5,
+            'breed' => 'Otros',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('breeds')->insert([
+            'id_breed' => 51,
+            'id_type' =>6,
+            'breed' => 'Otros',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('breeds')->insert([
+            'id_breed' => 52,
+            'id_type' =>7,
+            'breed' => 'Otros',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('breeds')->insert([
+            'id_breed' => 53,
+            'id_type' =>8,
+            'breed' => 'Otros',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('breeds')->insert([
+            'id_breed' => 54,
+            'id_type' =>9,
+            'breed' => 'Otros',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('breeds')->insert([
+            'id_breed' => 55,
+            'id_type' =>10,
+            'breed' => 'Otros',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('breeds')->insert([
+            'id_breed' => 56,
+            'id_type' =>11,
+            'breed' => 'Otros',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        DB::table('breeds')->insert([
+            'id_breed' => 57,
+            'id_type' =>12,
+            'breed' => 'Otros',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
     }
 }
