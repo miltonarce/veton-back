@@ -146,5 +146,14 @@ class VaccinesTableSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
+        DB::table('vaccines')->insert([
+            'id_vaccine' => 16,
+            'name' => 'Ninguna',
+            'next_dosis' => null,
+            'description' => '',
+            'expired' => 0,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
     }
 }

@@ -80,7 +80,7 @@ Route::delete('consultations/{idConsultation}', 'Api\\ConsultationsController@re
 //Consultation traer una consulta por id
 Route::get('consultation/{id}', 'Api\\ConsultationsController@findOneById');
 //Statistics (Estadisticas consultas por veterinaria de un usuario)
-Route::get('/consultations/veterinary/{id}/statistics', 'Api\\ConsultationsController@statistics');
+Route::get('/consultations/veterinary/{idUser}/statistics', 'Api\\ConsultationsController@statistics');
 
 
 // Appointments (Registrar un turno)

@@ -74,5 +74,14 @@ class DewormersTableSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
+        DB::table('dewormers')->insert([
+            'id_dewormer' => 8,
+            'name' => 'Ninguno',
+            'next_dosis' => null,
+            'description' => '',
+            'expired' => 0,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
     }
 }

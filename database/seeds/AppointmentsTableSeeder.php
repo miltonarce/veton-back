@@ -16,9 +16,9 @@ class AppointmentsTableSeeder extends Seeder
             'id_veterinary' => 1,
             'id_user' => 3,
             'date' => '2020-7-16',
-            'time' =>'9-10',
+            'time' =>'10-11',
             'type' =>1,
-            'reason' =>'test appointment.',
+            'reason' =>'Chequeo por vómitos.',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
@@ -29,7 +29,7 @@ class AppointmentsTableSeeder extends Seeder
             'date' => '2020-7-16',
             'time' =>'10-11',
             'type' =>1,
-            'reason' =>'test appointment 2.',
+            'reason' =>'Chequeo por vómitos',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
@@ -40,7 +40,7 @@ class AppointmentsTableSeeder extends Seeder
             'date' => '2020-7-17',
             'time' =>'10-11',
             'type' =>2,
-            'reason' =>'test appointment 3.',
+            'reason' =>'Chequeo de rutina.',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
@@ -125,10 +125,10 @@ class AppointmentsTableSeeder extends Seeder
             'id_appointment' => 11,
             'id_veterinary' => 1,
             'id_user' => 2,
-            'date' => '2020-7-21',
+            'date' => '2020-7-16',
             'time' =>'9-10',
             'type' =>2,
-            'reason' =>'Luli Perez, chequeo.',
+            'reason' =>'Luli Carneli, chequeo.',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
@@ -139,7 +139,7 @@ class AppointmentsTableSeeder extends Seeder
             'date' => '2020-7-21',
             'time' =>'10-11',
             'type' =>2,
-            'reason' =>'Tom Perez, chequeo.',
+            'reason' =>'Benito Dominguez, chequeo.',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
@@ -150,7 +150,7 @@ class AppointmentsTableSeeder extends Seeder
             'date' => '2020-7-22',
             'time' =>'10-11',
             'type' =>2,
-            'reason' =>'Tom Perez, chequeo.',
+            'reason' =>'Benito Dominguez, chequeo.',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
@@ -161,7 +161,7 @@ class AppointmentsTableSeeder extends Seeder
             'date' => '2020-7-23',
             'time' =>'10-11',
             'type' =>2,
-            'reason' =>'Fiaca Perez, chequeo.',
+            'reason' =>'Cucho Domínguez, chequeo.',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
