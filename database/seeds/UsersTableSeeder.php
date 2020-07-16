@@ -28,13 +28,13 @@ class UsersTableSeeder extends Seeder
         ]);
         DB::table('users')->insert([
             'id_user' => 2,
-            'name' => 'Paula',
-            'last_name' =>'Pérez',
+            'name' => 'Rosario',
+            'last_name' =>'Carnelli',
             'dni' =>37225879,
-            'email' =>'paulaperez@gmail.com',
+            'email' =>'rosario.carnelli@gmail.com',
             'password'=>  Hash::make('1234'),
-            'birthday'=>'1990-11-11 13:45:12',
-            'image'=>'paulaperez.jpg',
+            'birthday'=>'1994-8-24 13:45:12',
+            'image'=>'rosariocarnelli.jpg',
             'phone' => 1525896325,
             'id_role' => 4,
             'created_at' => date('Y-m-d H:i:s'),
