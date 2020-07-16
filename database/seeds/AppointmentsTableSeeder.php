@@ -16,9 +16,9 @@ class AppointmentsTableSeeder extends Seeder
             'id_veterinary' => 1,
             'id_user' => 3,
             'date' => '2020-7-16',
-            'time' =>'9-10',
+            'time' =>'10-11',
             'type' =>1,
-            'reason' =>'test appointment.',
+            'reason' =>'Chequeo por vómitos.',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
@@ -29,7 +29,7 @@ class AppointmentsTableSeeder extends Seeder
             'date' => '2020-7-16',
             'time' =>'10-11',
             'type' =>1,
-            'reason' =>'test appointment 2.',
+            'reason' =>'Chequeo por vómitos',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
@@ -40,7 +40,7 @@ class AppointmentsTableSeeder extends Seeder
             'date' => '2020-7-17',
             'time' =>'10-11',
             'type' =>2,
-            'reason' =>'test appointment 3.',
+            'reason' =>'Chequeo de rutina.',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
