@@ -52,6 +52,12 @@ class ConsultationsController extends Controller
         if ($request->has('id_dewormer')){
             $data['next_dosis_dewormer']= Carbon::now()->addmonth();
         }
+       if ($request->has('id_vaccine') && $request->id_vaccine == 16){
+           $data['id_vaccine']= null;
+       }
+       if ($request->has('id_dewormer')&& $request->id_dewormer == 8){
+           $data['id_dewormer']= null;
+       }
         Consultation::create($data);
         return response()->json([
             'success' => true,
