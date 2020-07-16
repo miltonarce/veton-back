@@ -158,7 +158,7 @@ class ConsultationsController extends Controller
             MONTH( c.created_at ) Mes FROM consultations c INNER JOIN clinicalhistories ch
             ON ( ch.id_history = c.id_history) INNER JOIN veterinaries v
             ON (v.id_veterinary = ch.id_veterinary) WHERE v.id_user IN ($idUser) 
-            AND C.created_at > DATE_ADD(NOW(), INTERVAL -12 MONTH) 
+            AND c.created_at > DATE_ADD(NOW(), INTERVAL -12 MONTH) 
             GROUP BY v.id_veterinary, v.fantasy_name,
             MONTH( c.created_at )");
 
