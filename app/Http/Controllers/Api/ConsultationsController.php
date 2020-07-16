@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class ConsultationsController extends Controller
 {
@@ -51,6 +52,12 @@ class ConsultationsController extends Controller
         if ($request->has('id_dewormer')){
             $data['next_dosis_dewormer']= Carbon::now()->addmonth();
         }
+       if ($request->has('id_vaccine') && $request->id_vaccine == 16){
+           $data['id_vaccine']= null;
+       }
+       if ($request->has('id_dewormer')&& $request->id_dewormer == 8){
+           $data['id_dewormer']= null;
+       }
         Consultation::create($data);
         return response()->json([
             'success' => true,
@@ -143,24 +150,18 @@ class ConsultationsController extends Controller
      * @param int $idVet
      * @return Response
      */
-    public function statistics($id)
+    public function statistics($idUser)
     {
-        $statistics = [];
-        $veterinaries = Veterinary::where('id_user', '=', $id)->get();
-        foreach ($veterinaries as $vet) {
-            $clinicalHistories = ClinicalHistory::all()->where('id_veterinary', '=', $vet->id_veterinary);
-            $cantConsultas = [];
-            foreach($clinicalHistories as $history){
-                $consultations = Consultation::all()->where('id_history', '=', $history->id_history);
-                /*->groupBy(function($val) {
-                    return Carbon::parse($val->created_at)->format('M');
-                });*/
-                 array_push($cantConsultas, count($consultations));
+        $statistics = DB::select(
+            "SELECT v.fantasy_name Veterinaria,
+            count( c.id_consultation ) Cant,
+            MONTH( c.created_at ) Mes FROM consultations c INNER JOIN clinicalhistories ch
+            ON ( ch.id_history = c.id_history) INNER JOIN veterinaries v
+            ON (v.id_veterinary = ch.id_veterinary) WHERE v.id_user IN ($idUser) 
+            AND C.created_at > DATE_ADD(NOW(), INTERVAL -12 MONTH) 
+            GROUP BY v.id_veterinary, v.fantasy_name,
+            MONTH( c.created_at )");
 
-            }
-            //$completName = $pet->name.' '.$pet->last_name;
-            array_push($statistics, ["name"=> $vet->business_name, $cantConsultas]);
-        }
         return response()->json([
             'success' => true,
             'msg' => null,
