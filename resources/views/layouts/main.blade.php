@@ -6,10 +6,11 @@
           content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{{ url('recursos/favicon.png') }}"/>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url('recursos/favicon.ico') }}"/>
     <link rel="stylesheet" href="{{ url('css/estilos.css') }}">
     <link rel="stylesheet" href="{{ url('css/app.css') }}">
     <link rel="stylesheet" href="{{ url('css/fuentes.css') }}">
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
