@@ -20,7 +20,7 @@ class VeterinariesTableSeeder extends Seeder
             'image'=>'maskkotas.jpg',
             'phone1' => 123456789,
             'phone2'=> 123456789,
-            'street'=> 'Calle falsa 123',
+            'street'=> 'Av. Corrientes 1343',
             'between_streets'=>'Calle siempre viva, Elm street',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
